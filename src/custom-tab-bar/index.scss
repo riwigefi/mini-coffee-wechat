@@ -1,0 +1,26 @@
+.tab {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+
+  &-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-img {
+      margin-bottom: 16px;
+      width: 48px;
+      height: 48px;
+    }
+
+    &-text {
+      height: 20px;
+      line-height: 20px;
+      font-size: 18px;
+      font-weight: 300;
+    }
+  }
+}
