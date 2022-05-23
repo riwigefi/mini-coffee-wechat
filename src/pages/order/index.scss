@@ -1,0 +1,83 @@
+.order {
+  width: 100%;
+  height: 100%;
+  background-color: lightblue;
+  padding-top: 100px;
+  .itemList {
+    .item {
+      width: 280px;
+      height: 200px;
+
+      background-color: #fff;
+      // background-color: salmon;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      &:last-child {
+        .after {
+          display: none;
+        }
+      }
+      // &:nth-child(odd) {
+      //   background-color: lightgreen;
+      // }
+      .inner {
+        width: 100%;
+        height: 190px;
+        background-color: gray;
+        border-top-right-radius: 40px;
+        z-index: 10;
+        // background-color: lightgreen;
+      }
+      .after {
+        position: absolute;
+        bottom: -40px;
+        right: 0;
+        z-index: 5;
+      }
+    }
+  }
+  .radius {
+    margin-top: 50px;
+    margin-left: 200px;
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    position: relative;
+    overflow: hidden;
+    &::after {
+      display: block;
+      content: '';
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: -40px;
+    }
+  }
+  .example {
+    margin-left: 200px;
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+    position: relative;
+    overflow: hidden;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: -100px;
+      content: '';
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: orange;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
