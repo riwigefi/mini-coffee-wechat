@@ -26,3 +26,24 @@
     height: env(safe-area-inset-bottom);
   }
 }
+
+.tab-page {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  @include iphone-x-padding-bottom(0px);
+  .main {
+    width: 100%;
+    flex: 1;
+    // background-color: lightgreen;
+  }
+  .mock-tab-ele {
+    flex-shrink: 0;
+    width: 100%;
+    height: 140px;
+    // background-color: lightcoral;
+  }
+}

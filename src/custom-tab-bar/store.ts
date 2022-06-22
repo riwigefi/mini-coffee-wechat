@@ -15,29 +15,29 @@ import UnActiveUser from '../tabBarIcon/inactive-user.png';
 
 const NORMAL_LIST = [
   {
-    pagePath: '/pages/index/index',
+    pagePath: '/pages/tabPages/index/index',
     text: '首页',
     selectedIconPath: ActiveHome,
-    iconPath: UnActiveHome
+    iconPath: UnActiveHome,
   },
   {
-    pagePath: '/pages/order/index',
+    pagePath: '/pages/tabPages/order/index',
     text: '订单',
     selectedIconPath: ActiveOrder,
-    iconPath: UnActiveOrder
+    iconPath: UnActiveOrder,
   },
   {
-    pagePath: '/pages/practice/index',
+    pagePath: '/pages/tabPages/practice/index',
     text: '练习',
     selectedIconPath: ActivePractice,
-    iconPath: UnActivePractice
+    iconPath: UnActivePractice,
   },
   {
-    pagePath: '/pages/user/index',
+    pagePath: '/pages/tabPages/user/index',
     text: '用户',
     selectedIconPath: ActiveUser,
-    iconPath: UnActiveUser
-  }
+    iconPath: UnActiveUser,
+  },
 ]; // 自行补充
 
 class TabBar {

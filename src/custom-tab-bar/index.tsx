@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import { switchTab } from '@tarojs/taro';
 
 import { CoverView, CoverImage } from '@tarojs/components';
+
 import * as _ from 'lodash';
 
 import appConfig from '../app.config';
@@ -18,9 +19,9 @@ const SELECTED_COLOR = '#d81e06';
 type ArrayType<T> = T extends (infer P)[] ? P : never;
 
 // 自动监听路由变化设置
-const tabBarPaths = _.map(appConfig.tabBar.list, v => v.pagePath);
+const tabBarPaths = _.map(appConfig.tabBar.list, (v) => v.pagePath);
 
-wx.onAppRoute(route => {
+wx.onAppRoute((route) => {
   tabBarPaths.includes(route.path);
   store.setSelected(`/${route.path}`);
 });
@@ -31,33 +32,39 @@ const CustomTabBar: FC = () => {
   };
 
   return (
-    <CoverView className='tab'>
-      {store.list.map((item, index) => {
-        return (
-          <CoverView
-            className='tab-item'
-            onClick={onSwitchTab.bind(this, item)}
-            data-path={item.pagePath}
-            key={item.text}
-          >
-            {/* 请使用 base64 格式，否则会存在性能问题 */}
-            <CoverImage
-              className='tab-item-img'
-              src={
-                store.selected === index ? item.selectedIconPath : item.iconPath
-              }
-            />
+    <CoverView className='tab-bar-container'>
+      <CoverView className='tab-list'>
+        {store.list.map((item, index) => {
+          return (
             <CoverView
-              className='tab-item-text'
-              style={{
-                color: store.selected === index ? SELECTED_COLOR : NORMAL_COLOR
-              }}
+              className='tab'
+              onClick={onSwitchTab.bind(this, item)}
+              data-path={item.pagePath}
+              key={item.text}
             >
-              {item.text + '自定义'}
+              {/* 请使用 base64 格式，否则会存在性能问题 */}
+              <CoverImage
+                className='tab-icon'
+                src={
+                  store.selected === index
+                    ? item.selectedIconPath
+                    : item.iconPath
+                }
+              />
+              <CoverView
+                className='tab-text'
+                style={{
+                  color:
+                    store.selected === index ? SELECTED_COLOR : NORMAL_COLOR,
+                }}
+              >
+                {item.text + '自定义'}
+              </CoverView>
             </CoverView>
-          </CoverView>
-        );
-      })}
+          );
+        })}
+      </CoverView>
+      <CoverView className='tab-center-icon'></CoverView>
     </CoverView>
   );
 };

@@ -1,16 +1,15 @@
 export default {
   pages: [
-    'pages/index/index',
-    'pages/order/index',
-    'pages/practice/index',
-    'pages/user/index'
+    'pages/tabPages/index/index',
+    'pages/tabPages/order/index',
+    'pages/tabPages/practice/index',
+    'pages/tabPages/user/index',
   ],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
     navigationBarTextStyle: 'black',
-    navigationStyle: 'custom'
   },
   tabBar: {
     custom: true,
@@ -19,21 +18,21 @@ export default {
     borderStyle: 'white',
     list: [
       {
-        pagePath: 'pages/index/index',
-        text: '首页'
+        pagePath: 'pages/tabPages/index/index',
+        text: '首页',
       },
       {
-        pagePath: 'pages/order/index',
-        text: '订单'
+        pagePath: 'pages/tabPages/order/index',
+        text: '订单',
       },
       {
-        pagePath: 'pages/practice/index',
-        text: '练习'
+        pagePath: 'pages/tabPages/practice/index',
+        text: '练习',
       },
       {
-        pagePath: 'pages/user/index',
-        text: '用户'
-      }
-    ]
-  }
+        pagePath: 'pages/tabPages/user/index',
+        text: '用户',
+      },
+    ],
+  },
 };

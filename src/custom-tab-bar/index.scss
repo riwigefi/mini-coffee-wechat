@@ -1,27 +1,53 @@
-.tab {
+.tab-bar-container {
   width: 100%;
-  height: 120px;
+  height: 160px;
   display: flex;
-  align-items: center;
-  background-color: #fff;
+  flex-direction: column;
+  justify-content: flex-end;
+  // background-color: orange;
+  background-color: transparent;
+  padding-bottom: constant(safe-area-inset-bottom); // 兼容 11.0 < iOS < 11.2
+  padding-bottom: env(safe-area-inset-bottom); // 兼容 iOS >= 11.2
+  position: relative;
+  .tab-center-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    // background-color: red;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 8;
+  }
 
-  &-item {
-    flex: 1;
+  .tab-list {
+    width: 100%;
+    height: 140px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    background-color: #fff;
+    background-color: lightblue;
+    z-index: 16;
 
-    &-img {
-      margin-bottom: 16px;
-      width: 48px;
-      height: 48px;
-    }
+    .tab {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-    &-text {
-      height: 20px;
-      line-height: 20px;
-      font-size: 18px;
-      font-weight: 300;
+      &-icon {
+        margin-bottom: 16px;
+        width: 48px;
+        height: 48px;
+      }
+
+      &-text {
+        height: 20px;
+        line-height: 20px;
+        font-size: 18px;
+        font-weight: 300;
+      }
     }
   }
 }

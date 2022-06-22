@@ -1,15 +1,15 @@
 type PromiseTask = (...args: unknown[]) => Promise<unknown>;
 
-const promiseAllStepN = (n: number, list: PromiseTask[]) => {
+export const promiseAllStepN = (n: number, list: PromiseTask[]) => {
   let tail = list.splice(n);
   let head = list;
   let resolved: Promise<unknown>[] = [];
   let processed = 0;
-  return new Promise(resolve => {
-    head.forEach(task => {
+  return new Promise((resolve) => {
+    head.forEach((task) => {
       let res = task();
       resolved.push(res);
-      res.then(x => {
+      res.then((x) => {
         runNext();
         return x;
       });
@@ -19,7 +19,7 @@ const promiseAllStepN = (n: number, list: PromiseTask[]) => {
         resolve(Promise.all(resolved));
       } else {
         resolved.push(
-          tail[processed]().then(x => {
+          tail[processed]().then((x) => {
             runNext();
             return x;
           })

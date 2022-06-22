@@ -9,7 +9,7 @@
     "css": "sass"
   },
   "scripts": {
-    "build:weapp": "taro build --type weapp",
+    "build:weapp": "taro build --watch --type weapp",
     "build:swan": "taro build --type swan",
     "build:alipay": "taro build --type alipay",
     "build:tt": "taro build --type tt",
@@ -36,15 +36,18 @@
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "@tarojs/cli": "3.4.1",
     "@tarojs/components": "3.4.1",
     "@tarojs/plugin-framework-react": "3.4.1",
+    "@tarojs/plugin-platform-weapp": "^3.4.10",
     "@tarojs/react": "3.4.1",
     "@tarojs/runtime": "3.4.1",
     "@tarojs/taro": "3.4.1",
+    "axios": "^0.27.2",
     "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "mobx": "^6.5.0",
     "mobx-react": "^7.3.0",
+    "qs": "^6.10.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "taro-hooks": "latest"
