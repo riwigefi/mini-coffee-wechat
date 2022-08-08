@@ -1,9 +1,11 @@
 export default {
   pages: [
+    'pages/testCanvas/index',
     'pages/tabPages/index/index',
     'pages/tabPages/order/index',
     'pages/tabPages/practice/index',
     'pages/tabPages/user/index',
+    'pages/testImage/index',
   ],
   window: {
     backgroundTextStyle: 'light',

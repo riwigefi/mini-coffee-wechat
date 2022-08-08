@@ -15,6 +15,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/testImage/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/testCanvas/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
