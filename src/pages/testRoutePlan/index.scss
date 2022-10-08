@@ -1,0 +1,52 @@
+.test-map {
+  width: 100vw;
+  height: 100vh;
+  background-color: lightcoral;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 32px;
+  .search-bar {
+    width: 100%;
+    height: 80px;
+    border-radius: 30px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    .left {
+      width: 120px;
+      text-align: center;
+      margin-right: 20px;
+      border: 1px solid red;
+    }
+    .right {
+      flex: 1;
+      .blur {
+        width: 100%;
+        border: 1px solid salmon;
+      }
+      .focus-input {
+        width: 100%;
+        border: 1px solid salmon;
+      }
+    }
+  }
+  .search-content {
+    width: 100%;
+    flex: 1;
+    background-color: lightgreen;
+    padding: 20px 0;
+    .test-btn {
+      margin-top: 20px;
+      width: 100%;
+      height: 100px;
+      border-radius: 60px;
+      background-color: lightblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

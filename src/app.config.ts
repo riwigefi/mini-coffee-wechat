@@ -1,11 +1,10 @@
 export default {
   pages: [
-    'pages/testCanvas/index',
+    'pages/testAutoScroll/index',
     'pages/tabPages/index/index',
     'pages/tabPages/order/index',
     'pages/tabPages/practice/index',
     'pages/tabPages/user/index',
-    'pages/testImage/index',
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -37,4 +36,37 @@ export default {
       },
     ],
   },
+  permission: {
+    'scope.userLocation': {
+      desc: '你的位置信息将用于小程序定位',
+    },
+  },
+  plugins: {
+    chooseLocation: {
+      version: '1.0.9',
+      provider: 'wx76a9a06e5b4e693e',
+    },
+    routePlan: {
+      version: '1.0.19',
+      provider: 'wx50b5593e81dd937a',
+    },
+  },
+  // subPackages里面的可以单独放在一个目录
+  subPackages: [
+    {
+      root: 'pages/testCanvas',
+      name: 'testCanvas',
+      pages: ['index'],
+    },
+    {
+      root: 'pages/testRoutePlan',
+      name: 'testRoutePlan',
+      pages: ['index'],
+    },
+    {
+      root: 'pages/testImage',
+      name: 'testImage',
+      pages: ['index'],
+    },
+  ],
 };
